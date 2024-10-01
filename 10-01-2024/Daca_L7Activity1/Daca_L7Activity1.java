@@ -1,4 +1,4 @@
-package Daca_L7Activity1;
+package Daca_L7Activity;
 
 import java.util.Arrays;
 
