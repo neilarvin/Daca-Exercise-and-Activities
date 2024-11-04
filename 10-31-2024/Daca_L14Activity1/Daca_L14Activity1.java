@@ -70,7 +70,7 @@ public class Daca_L14Activity1 {
 		
 		for(int i = 0; i < counter; i++) {
 			
-			if(search.equals(name[i])) {
+			if(search.equalsIgnoreCase(name[i])) {
 				System.out.println("\nName: " + name[i]);
 				System.out.println("Phone Number: " + phoneNumber[i]);
 				break;
