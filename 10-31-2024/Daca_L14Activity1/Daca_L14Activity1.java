@@ -68,6 +68,14 @@ public class Daca_L14Activity1 {
 		System.out.print("\nSearch a name: ");
 		search = scan.next();
 		
+		searchName(search, name, phoneNumber, counter);
+		
+		scan.close();
+
+	}
+	
+	public static void searchName(String search, String name[], Long phoneNumber[], int counter) {
+		
 		for(int i = 0; i < counter; i++) {
 			
 			if(search.equalsIgnoreCase(name[i])) {
@@ -78,8 +86,6 @@ public class Daca_L14Activity1 {
 			
 		}
 		
-		scan.close();
-
 	}
 
 }
