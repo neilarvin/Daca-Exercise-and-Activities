@@ -19,7 +19,7 @@ public class OutOfBoundDigitsException extends Exception {
 		isValid = str_length == 10;
 		
 		if(!isValid) {
-			throw new OutOfBoundDigitsException("\nInvalid phone number! Only 10-digit numbers are allowed.\n");
+			throw new OutOfBoundDigitsException("\nInvalid phone number! Only 10-digit numbers are allowed.");
 		}
 		
 	}

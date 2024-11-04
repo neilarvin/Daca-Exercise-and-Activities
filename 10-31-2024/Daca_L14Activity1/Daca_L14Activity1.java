@@ -1,5 +1,6 @@
 package Daca_L14Activity1;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Daca_L14Activity1 {
@@ -17,22 +18,34 @@ public class Daca_L14Activity1 {
 		
 		for(int i = 0; i < ARRAY_LENGTH; i++) {
 			
+			boolean errorCaught = true;
+			
 			System.out.print("Input name #" + (i + 1) + " here: ");
 			nameInput = scan.next();
 			
 			if(!nameInput.equalsIgnoreCase("n/a")) {
 				
 				name[i] = nameInput;
-				System.out.print("Input number of name #" + (i + 1) + " here: ");
 				
-				try {
-					phoneInput = scan.nextLong();
-		            validator.validateDigits(phoneInput);
-					phoneNumber[i] = phoneInput;
-		        } catch (OutOfBoundDigitsException e) {
-		            System.err.println(e.getMessage());
-		            i--;
-		        }
+				while(errorCaught) {
+					System.out.print("Input number of name #" + (i + 1) + " here: ");
+					try {
+						phoneInput = scan.nextLong();
+			            validator.validateDigits(phoneInput);
+						phoneNumber[i] = phoneInput;
+						errorCaught = false;
+			        } catch (InputMismatchException e) {
+			        	System.err.println("\nInvalid input! Only whole numbers are allowed.");
+						errorCaught = true;
+						scan.next();
+			        } catch (OutOfBoundDigitsException e) {
+			            System.err.println(e.getMessage());
+			            errorCaught = true;
+			        } 
+					
+				}
+				System.out.println();
+				errorCaught = true;
 				
 			}else {
 				
